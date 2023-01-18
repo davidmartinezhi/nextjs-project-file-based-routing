@@ -15,7 +15,7 @@ function EventItem(props) {
   const exploreLink = `/events/${id}`;
 
   return (
-    <li className={classes.item}>
+    <li className={classes.item} key={id}>
       <img src={"/" + image} alt={title} />
       <div className={classes.content}>
         <div className={classes.summary}>
@@ -24,16 +24,18 @@ function EventItem(props) {
             <DateIcon />
             <time>{humanReadableDate}</time>
           </div>
-          
+
           <div className={classes.address}>
-          <AddressIcon />
+            <AddressIcon />
             <address>{formattedAddress}</address>
           </div>
         </div>
         <div className={classes.actions}>
           <Button link={exploreLink}>
             <span>Explore Event</span>
-            <span className={classes.icon}><ArrowRightIcon/></span>
+            <span className={classes.icon}>
+              <ArrowRightIcon />
+            </span>
           </Button>
         </div>
       </div>
