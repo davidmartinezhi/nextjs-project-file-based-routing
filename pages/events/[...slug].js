@@ -9,13 +9,13 @@ import Button from "../../components/ui/button";
 import { getFilteredEvents } from "../../helpers/api-utils";
 
 function FilteredEventsPage(props) {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const filterData = router.query.slug;
+  // const filterData = router.query.slug;
 
-  if (!filterData) {
-    return <p className="center">Loading...</p>;
-  }
+  // if (!filterData) {
+  //   return <p className="center">Loading...</p>;
+  // }
 
   if (props.hasError) {
     return (
