@@ -1,5 +1,5 @@
 //Head can be added anywhere to my jsx code to a given component
-//next js injects this to head of app
+//next js injects this to head of app, search engines will see it
 import Head from "next/head";
 import { getFeaturedEvents } from "../helpers/api-utils";
 
