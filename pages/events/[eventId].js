@@ -7,6 +7,8 @@ import EventSummary from "../../components/event-detail/event-summary";
 import ErrorAlert from "../../components/ui/error-alert";
 import Button from "../../components/ui/button";
 
+import Comments from "../../components/input/comments";
+
 function EventDetailPage(props) {
   //const router = useRouter(); //use router object
   //const eventId = router.query.eventId; //access to query in key "eventId"
@@ -41,6 +43,7 @@ function EventDetailPage(props) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </Fragment>
   );
 }
