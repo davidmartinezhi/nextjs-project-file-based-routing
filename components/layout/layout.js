@@ -16,7 +16,7 @@ function Layout(props) {
         <Notification
           title={activeNotification.title}
           message={activeNotification.message}
-          status={activeNotification.message}
+          status={activeNotification.status}
         ></Notification>
       )}
     </Fragment>
