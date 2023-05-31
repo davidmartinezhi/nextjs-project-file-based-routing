@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Layout from "../components/layout/layout";
+import Notification from "../components/ui/notification";
 import "../styles/globals.css";
+import { NotificationContextProvider } from "../store/notification-context";
 
 function MyApp({ Component, pageProps }) {
   {
@@ -10,9 +12,10 @@ function MyApp({ Component, pageProps }) {
     */
   }
   return (
-    <Layout>
-      <Head>
-        {/* 
+    <NotificationContextProvider>
+      <Layout>
+        <Head>
+          {/* 
         This head is applied for all pages
 
         Head elements are merged and if there are conflicts, the second element is the one that stays
@@ -20,12 +23,17 @@ function MyApp({ Component, pageProps }) {
         We can give all pages a general title and data, if htere is a more specific one in a page the general data will
         be replaced with the specific data
         */}
-        <title>Next Events</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
+          <title>Next Events</title>
+          <meta name="description" content="" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+        <Component {...pageProps} />
+        <Notification title="Test" message="This is a test" status="success" />
+      </Layout>
+    </NotificationContextProvider>
   );
 }
 
